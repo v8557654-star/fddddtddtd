@@ -1,0 +1,4 @@
+chair.glb, chair_desk.glb, chair_cushion.glb
+  from "Furniture Kit" by Kenney (www.kenney.nl), CC0 1.0 Universal
+  https://kenney.nl/assets/furniture-kit
+  (renamed from chair.glb / chairDesk.glb / chairCushion.glb)
