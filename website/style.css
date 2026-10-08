@@ -1,0 +1,128 @@
+/* ------- Basic Reset ------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "DejaVu Sans", sans-serif; background: #0a0a0a; color: #e0e0e0; overflow-x: hidden; }
+a { color: #ff6b6b; text-decoration: none; }
+a:hover { color: #ff8c42; }
+
+/* ------- Glitch Title ------- */
+.glitch { position: relative; font-size: 2.8rem; letter-spacing: 0.2em; }
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, #ff6b6b, #ff8c42, #ff6b6b);
+  background-size: 180% 180%;
+  z-index: -1;
+  clip: rect(0, auto, auto, 0);
+  animation: glitch 2.5s infinite linear;
+}
+.glitch::after { animation-direction: alternate; animation-delay: 0.1s; }
+@keyframes glitch {
+  0%   { clip: rect(86px, 9999px, 16px, 0); }
+  2%   { clip: rect(12px, 9999px, 85px, 0); }
+  4%   { clip: rect(86px, 9999px, 85px, 0); }
+  6%   { clip: rect(12px, 9999px, 16px, 0); }
+  8%   { clip: rect(90px, 9999px, 16px, 0); }
+  10%  { clip: rect(12px, 9999px, 85px, 0); }
+  12%  { clip: rect(86px, 9999px, 85px, 0); }
+  14%  { clip: rect(12px, 9999px, 16px, 0); }
+  16%  { clip: rect(86px, 9999px, 85px, 0); }
+  18%  { clip: rect(12px, 9999px, 85px, 0); }
+  20%  { clip: rect(86px, 9999px, 16px, 0); }
+  22%  { clip: rect(12px, 9999px, 85px, 0); }
+  24%  { clip: rect(86px, 9999px, 85px, 0); }
+  26%  { clip: rect(12px, 9999px, 16px, 0); }
+  28%  { clip: rect(86px, 9999px, 85px, 0); }
+  30%  { clip: rect(12px, 9999px, 85px, 0); }
+  32%  { clip: rect(86px, 9999px, 16px, 0); }
+  34%  { clip: rect(12px, 9999px, 85px, 0); }
+  36%  { clip: rect(86px, 9999px, 85px, 0); }
+  38%  { clip: rect(12px, 9999px, 16px, 0); }
+  40%  { clip: rect(86px, 9999px, 85px, 0); }
+  42%  { clip: rect(12px, 9999px, 16px, 0); }
+  44%  { clip: rect(86px, 9999px, 85px, 0); }
+  46%  { clip: rect(12px, 9999px, 85px, 0); }
+  48%  { clip: rect(86px, 9999px, 16px, 0); }
+  50%  { clip: rect(12px, 9999px, 85px, 0); }
+  52%  { clip: rect(86px, 9999px, 85px, 0); }
+  54%  { clip: rect(12px, 9999px, 16px, 0); }
+  56%  { clip: rect(86px, 9999px, 85px, 0); }
+  58%  { clip: rect(12px, 9999px, 85px, 0); }
+  60%  { clip: rect(86px, 9999px, 85px, 0); }
+  62%  { clip: rect(12px, 9999px, 16px, 0); }
+  64%  { clip: rect(86px, 9999px, 85px, 0); }
+  66%  { clip: rect(12px, 9999px, 85px, 0); }
+  68%  { clip: rect(86px, 9999px, 16px, 0); }
+  70%  { clip: rect(12px, 9999px, 85px, 0); }
+  72%  { clip: rect(86px, 9999px, 85px, 0); }
+  74%  { clip: rect(12px, 9999px, 16px, 0); }
+  76%  { clip: rect(86px, 9999px, 85px, 0); }
+  78%  { clip: rect(12px, 9999px, 85px, 0); }
+  80%  { clip: rect(86px, 9999px, 16px, 0); }
+  82%  { clip: rect(12px, 9999px, 85px, 0); }
+  84%  { clip: rect(86px, 9999px, 85px, 0); }
+  86%  { clip: rect(12px, 9999px, 16px, 0); }
+  88%  { clip: rect(86px, 9999px, 85px, 0); }
+  90%  { clip: rect(12px, 9999px, 85px, 0); }
+  92%  { clip: rect(86px, 9999px, 85px, 0); }
+  94%  { clip: rect(12px, 9999px, 16px, 0); }
+  96%  { clip: rect(86px, 9999px, 85px, 0); }
+  98%  { clip: rect(12px, 9999px, 85px, 0); }
+  100% { clip: rect(86px, 9999px, 85px, 0); }
+}
+
+/* ------- Header / Tagline ------- */
+header { padding: 2rem; text-align: center; }
+.tagline { margin-top: 0.5rem; font-size: 1.2rem; color: #aaa; }
+
+/* ------- Trailer Canvas Section ------- */
+.trailer { position: relative; height: 48vh; background: #000; overflow: hidden; }
+#trailerCanvas { width: 100%; height: 100%; display: block; }
+.play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  background: rgba(0,0,0,0.6); color: #ff6b6b; padding: 0.8rem 1.5rem;
+  border: 2px solid #ff6b6b; border-radius: 4px; font-size: 1.1rem;
+  cursor: pointer; transition: background 0.3s;
+}
+.play-btn:hover { background: #ff6b6b; color: #0a0a0a; }
+
+/* ------- Features Grid ------- */
+.features { padding: 4rem 2rem; max-width: 960px; margin: auto; }
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #ff6b6b; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.feature-card { background: #111; padding: 1.5rem; border-radius: 6px; text-align: center; transition: transform 0.2s; }
+.feature-card:hover { transform: translateY(-4px); }
+.feature-card .icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+.feature-card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+.feature-card p { font-size: 0.9rem; color: #aaa; }
+
+/* ------- Footer ------- */
+footer { padding: 2rem; text-align: center; font-size: 0.9rem; color: #aaa; background: #000; border-top: 1px solid #222; }
+.social { margin-top: 1rem; }
+.social li { display: inline-block; margin: 0 0.5rem; }
+.social a { color: #ff6b6b; font-size: 0.9rem; transition: color 0.3s; }
+.social a:hover { color: #ff8c42; }
+
+/* ------- Bodycam filters (CSS only) ------- */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.4) 1px,
+    rgba(255,255,255,0.02) 1px,
+    rgba(255,255,255,0.02) 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='scanlines'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23scanlines)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.3;
+}
